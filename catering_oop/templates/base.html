@@ -1,0 +1,7 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Dapur Rasa{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><aside><div class="brand"><span>DR</span><div><b>Dapur Rasa</b><small>Catering Manager</small></div></div>
+<nav><a class="{{'active' if request.endpoint=='dashboard'}}" href="{{url_for('dashboard')}}">⌂ Ringkasan</a><a class="{{'active' if request.endpoint=='menus'}}" href="{{url_for('menus')}}">☷ Daftar menu</a><a class="{{'active' if request.endpoint=='customers'}}" href="{{url_for('customers')}}">♙ Pelanggan</a><a class="{{'active' if request.endpoint=='orders'}}" href="{{url_for('orders')}}">▣ Pesanan</a></nav><div class="oop"><small>PROJECT PYTHON OOP</small><b>6 konsep diterapkan</b><p>Class · Encapsulation<br>Inheritance · Polymorphism<br>Abstraction · Method</p></div></aside>
+<main><header><div><small>SISTEM PEMESANAN KATERING</small><h1>{% block heading %}{% endblock %}</h1></div><div class="admin"><span>A</span><div><b>Admin Katering</b><small>Pengelola sistem</small></div></div></header>
+{% for category,message in get_flashed_messages(with_categories=true) %}<div class="flash {{category}}">{{message}}</div>{% endfor %}{% block content %}{% endblock %}</main></body></html>
+
